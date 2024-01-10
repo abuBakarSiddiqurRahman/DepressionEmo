@@ -1,5 +1,6 @@
 # DepressionEmo
 DepressionEmo: A novel dataset for multilabel classification of depression emotions
+https://arxiv.org/pdf/2401.04655.pdf
 
 # Dataset
 ## Subsets
