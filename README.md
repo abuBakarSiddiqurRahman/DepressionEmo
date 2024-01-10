@@ -41,17 +41,17 @@ python light_gbm.py
 ## BERT
 To train the model:
 ```
-python bert.py  --mode "train" --model_name "bert-base-cased" --epochs 25 --batch_size 8 --max_length 256 --train_path "dataset/train.json" --val_path "dataset/val.json" --test_path "dataset/test.json"
+python bert.py  --mode "train" --model_name "bert-base-cased" --epochs 25 --batch_size 8 --max_length 256 --train_path "Dataset/train.json" --val_path "Dataset/val.json" --test_path "Dataset/test.json"
 ```
 
 To test the model:
 ```
-python bert.py --mode "test" --train_path "dataset/train.json" --val_path "dataset/val.json" --test_path "dataset/test.json" --max_length 256 --test_batch_size 16
+python bert.py --mode "test" --train_path "Dataset/train.json" --val_path "Dataset/val.json" --test_path "Dataset/test.json" --max_length 256 --test_batch_size 16
 ```
 Note that you must give all sets (including the test set) so that BERT can capture all class names (categories).
 
 ## GAN BERT
-GAN-BERT uses ''dataset/label_names.json'' to capture all categories, including category "unlabelled".
+GAN-BERT uses ''Dataset/label_names.json'' to capture all categories, including category "unlabelled".
 To train the model:
 
 ```
@@ -61,20 +61,20 @@ python gan.py --mode "train" --model_name "bert-base-cased" --lr_discriminator 2
 To test the model:
 
 ```
-python gan.py --mode "test" --model_path "model_bert-base-cased.bin"  --test_file "dataset/test.json"
+python gan.py --mode "test" --model_path "model_bert-base-cased.bin"  --test_file "Dataset/test.json"
 ```
 
 ## BART
 To train the model:
 
 ```
-python seq2seq.py --mode "train" --model_name "facebook/bart-base" --train_path "dataset/train.json" --val_path "dataset/val.json" --test_path "dataset/test.json" --epochs 25 --batch_size 4 --max_source_length 256
+python seq2seq.py --mode "train" --model_name "facebook/bart-base" --train_path "Dataset/train.json" --val_path "Dataset/val.json" --test_path "Dataset/test.json" --epochs 25 --batch_size 4 --max_source_length 256
 ```
 
 To test the model:
 
 ```
-python seq2seq.py --mode "test" --model_name "facebook/bart-base" --model_path "bart-base\model_checkpoint_xxx" --test_path "dataset/test.json" --test_batch_size 4 --max_source_length 256 --min_target_length 1
+python seq2seq.py --mode "test" --model_name "facebook/bart-base" --model_path "bart-base\model_checkpoint_xxx" --test_path "Dataset/test.json" --test_batch_size 4 --max_source_length 256 --min_target_length 1
 ```
 
 # Contact
