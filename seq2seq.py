@@ -197,7 +197,7 @@ def train(train_set, val_set, test_set, tokenizer, model, model_name = 'facebook
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
         predict_with_generate=True,
-        fp16=True, # Overflows with fp16
+        fp16=True, # overflows with fp16, for T5 models please hide this parameter
         #learning_rate=3e-4,
         num_train_epochs=epochs,
         # logging & evaluation strategies
