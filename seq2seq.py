@@ -229,7 +229,7 @@ def train(train_set, val_set, test_set, tokenizer, model, model_name = 'facebook
         )
 
     trainer.train()
-    trainer.evaluate()
+    #trainer.evaluate()
 
 def test(dataset, model_name, model, tokenizer, input_file = 'dataset/test.json', \
                      batch_size = 4, max_len = 128, min_len = 1):
