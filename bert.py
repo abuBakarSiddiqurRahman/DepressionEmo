@@ -373,6 +373,11 @@ def test_dataset(test_set, class_names = [],
     f1_mac = f1_score(y_true=true_list, y_pred=pred_list, average='macro')
     re_mac = recall_score(y_true=true_list, y_pred=pred_list, average='macro')
     pre_mac = precision_score(y_true=true_list, y_pred=pred_list, average='macro')
+
+    #per label
+    label_names = ["loneliness", "hopelessness", "sadness", "brain dysfunction (forget)", "worthlessness", "emptiness", "anger", "suicide intent"]
+    for l in range(8):
+        print('f1 for label: ', label_names[l], f1_score(y_true=[i[l] for i in true_list], y_pred=[i[l] for i in pred_list], average='macro') * 2 - 1)
     
     result = {}
     result['f1_micro'] = f1_mi
@@ -484,6 +489,17 @@ def main(args):
         test_set = read_list_from_jsonl_file(args.test_path)
     
         dataset = train_set + val_set + test_set # capture all labels
+
+        # Count the number of labels in test_set
+        labels = [item[0] for item in classifier_by_text(dataset)]
+        labels = [list(l.strip()) for l in labels if l.strip() != '']
+        label_counts = [0] * 8
+        for l in labels:
+            for i in range(8):
+                if 8-i > len(l): continue
+                if (l[i-8] == '1'): label_counts[i] += 1
+        label_names = ["loneliness", "hopelessness", "sadness", "brain dysfunction (forget)", "worthlessness", "emptiness", "anger", "suicide intent"]
+        for i in range(8): print(label_names[i], ': ', label_counts[i])
 
         class_names = sorted(list(set([item[0] for item in classifier_by_text(dataset)])), key = lambda x: x)
         class_names = [c.strip() for c in class_names if c.strip() != '']
