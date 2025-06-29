@@ -8,7 +8,8 @@ If you use our dataset in your research, please make sure to cite the following 
 
 Rahman, A. B. S., Ta, H. T., Najjar, L., Azadmanesh, A., & Gönül, A. S. (2024). DepressionEmo: A novel dataset for multilabel classification of depression emotions. Journal of Affective Disorders. https://doi.org/10.1016/j.jad.2024.08.013
 
-If you plan to use the DepressionEmo dataset for developing a web application, mobile app, or any commercial tool, please contact us first at: abubakarsiddiqurra@unomaha.edu. 
+Use of the DepressionEmo dataset for developing any web application, mobile app, or commercial tool is strictly prohibited without prior written permission.
+Please contact us at abubakarsiddiqurra@unomaha.edu before initiating any such use.
 
 
 # Dataset
